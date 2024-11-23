@@ -5,7 +5,6 @@ import {DefaultResponseType} from "../../../../types/default-response.type";
 import {environment} from "../../../../environments/environment";
 import {CartType} from "../../../../types/cart.type";
 import {CartService} from "../../../shared/services/cart.service";
-import {ProductType} from "../../../../types/product.type";
 import {forkJoin} from "rxjs";
 
 @Component({
