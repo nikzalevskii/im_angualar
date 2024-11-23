@@ -68,10 +68,19 @@
           font-weight: 600;
           font-size: 22px;
         }
-        .favorite-product-action button {
-          width: 160px;
+        .favorite-product-action {
+          display: flex;
+          align-items: center;
+          button {
+            margin-right: 20px;
+            width: 160px;
+          }
         }
+
+
         .favorite-product-remove {
+          display: flex;
+          align-items: center;
           margin-left: 61px;
           cursor: pointer;
         }

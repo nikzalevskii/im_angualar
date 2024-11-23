@@ -4,7 +4,6 @@ import {ProductType} from "../../../../types/product.type";
 import {ProductService} from "../../../shared/services/product.service";
 import {ActivatedRoute} from "@angular/router";
 import {environment} from "../../../../environments/environment";
-import {count} from "rxjs";
 import {CartType} from "../../../../types/cart.type";
 import {CartService} from "../../../shared/services/cart.service";
 import {FavoriteService} from "../../../shared/services/favorite.service";
@@ -24,6 +23,7 @@ export class DetailComponent implements OnInit {
   serverStaticPath: string = environment.serverStaticPath;
   count: number = 1;
   private _snackBar = inject(MatSnackBar);
+  isLogged: boolean = false;
 
   customOptions: OwlOptions = {
     loop: true,
@@ -56,6 +56,7 @@ export class DetailComponent implements OnInit {
               private cartService: CartService,
               private favoriteService: FavoriteService,
               private authService: AuthService) {
+    this.isLogged = this.authService.getIsLoggedIn();
   }
 
   ngOnInit(): void {

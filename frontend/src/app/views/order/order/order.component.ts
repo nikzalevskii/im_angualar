@@ -199,7 +199,6 @@ export class OrderComponent implements OnInit {
             }
           }
         });
-      console.log(this.orderForm.value);
     } else {
       this.orderForm.markAllAsTouched();
       this._snackBar.open('Заполните необходимые поля');

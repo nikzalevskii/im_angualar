@@ -23,14 +23,16 @@ export class ProductCardComponent implements OnInit {
   serverStaticPath: string = environment.serverStaticPath;
   count: number = 1;
   private _snackBar = inject(MatSnackBar);
-
+  isLogged: boolean = false;
   constructor(private cartService: CartService,
               private authService:AuthService,
               private router: Router,
               private favoriteService: FavoriteService) {
+    this.isLogged = this.authService.getIsLoggedIn();
   }
 
   ngOnInit(): void {
+
     if (this.countInCart && this.countInCart > 1) {
       this.count = this.countInCart
     }
@@ -101,4 +103,5 @@ export class ProductCardComponent implements OnInit {
     }
   }
 
+  protected readonly AuthService = AuthService;
 }
